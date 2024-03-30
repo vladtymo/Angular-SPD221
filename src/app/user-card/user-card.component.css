@@ -1,0 +1,21 @@
+.card {
+    padding: 20px;
+    background-color: rgb(34, 64, 90);
+    color: white;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 4px;
+    transition: .2s;
+}
+
+.card h3 {
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.admin {
+    background-color: rgb(64, 34, 90);
+}
