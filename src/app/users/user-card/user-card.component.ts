@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IUser } from './user';
+import { Component, Input } from '@angular/core';
+import { IUser } from '../user';
 
 @Component({
   selector: 'app-user-card',
@@ -10,10 +10,12 @@ import { IUser } from './user';
 })
 export class UserCardComponent {
 
+  @Input()
   user: IUser = {
-    name: "Vlad Tymo",
-    email: "super@gmail.com",
-    address: "Rivne, Ukraine",
+    id: 0,
+    name: "",
+    email: "",
+    address: "",
     isAdmin: false
   }
 

@@ -1,0 +1,12 @@
+<h2>User List</h2>
+
+<div>
+    @for (i of users; track i.id) {
+    <app-user-card [user]="i"></app-user-card>
+    }
+</div>
+
+<div>
+    <button (click)="clear()">Clear All</button>
+    <button (click)="load()">Load Data</button>
+</div>
