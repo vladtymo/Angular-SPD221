@@ -1,8 +1,13 @@
 <h2>User List</h2>
 
 <div>
+    @if(!users || users.length == 0) {
+    <p>User list is empty!</p>
+    }
+    @else {
     @for (i of users; track i.id) {
     <app-user-card [user]="i" (deleteEvent)="deleteUser($event)"></app-user-card>
+    }
     }
 </div>
 
