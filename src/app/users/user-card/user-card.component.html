@@ -1,7 +1,15 @@
 <!-- One-way binding: {{property}} -->
-<div class="card" [class.admin]="user.isAdmin" (click)="onClick()">
+<div class="card" [class.admin]="user.isAdmin">
     <h3>{{user.name}}</h3>
     <p>Email: {{user.email}}</p>
     <p>Address: {{user.address}}</p>
-    <p>Role: {{user.isAdmin ? "Admin" : "User"}}</p>
+    <p>
+        <span>Role: {{user.isAdmin ? "Admin" : "User"}} </span>
+        <button (click)="onClick()"><i class="fa-solid fa-rotate"></i></button>
+    </p>
+    <div style="text-align: center;">
+        <button style="font-size: 20px; color: darkred;" (click)="onDelete()">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </div>
 </div>

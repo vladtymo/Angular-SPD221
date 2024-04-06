@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IUser } from '../user';
 
 @Component({
@@ -9,6 +9,8 @@ import { IUser } from '../user';
   styleUrl: './user-card.component.css'
 })
 export class UserCardComponent {
+
+  @Output() deleteEvent = new EventEmitter<number>();
 
   @Input()
   user: IUser = {
@@ -21,6 +23,10 @@ export class UserCardComponent {
 
   onClick() {
     this.user.isAdmin = !this.user.isAdmin;
+  }
+
+  onDelete() {
+    this.deleteEvent.emit(this.user.id);
   }
 }
 

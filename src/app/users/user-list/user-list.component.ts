@@ -11,12 +11,18 @@ import { USERS } from '../user-mock';
   imports: [UserCardComponent]
 })
 export class UserListComponent {
-  users: IUser[] = USERS;
+  users: IUser[] = [...USERS];
 
   clear() {
     this.users = [];
+
   }
   load() {
-    this.users = USERS;
+    this.users = [...USERS];
+  }
+
+  deleteUser(id: number) {
+    let index = this.users.findIndex(x => x.id == id);
+    this.users.splice(index, 1);
   }
 }
